@@ -1,9 +1,6 @@
-import { TouchBar } from "electron"
-import * as path from "path"
 import * as YAML from "yamljs"
 import * as applescript from "applescript"
 import {currentDisplay} from "./applescript_screen"
-
 
 
 export function commands(configFile: string): Command[] {

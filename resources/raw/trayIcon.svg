@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   sodipodi:docname="trayIcon.svg"
+   inkscape:version="1.0beta2 (2b71d25, 2019-12-03)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="61"
+     inkscape:window-height="1005"
+     inkscape:window-width="1619"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="301.63087"
+     inkscape:cx="342.8506"
+     inkscape:zoom="2.4233537"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Layer 1">
+    <path
+       inkscape:export-ydpi="11.93"
+       inkscape:export-xdpi="11.93"
+       inkscape:export-filename="/Users/marc/Developer/personal/touchbar/glowbear/resources/trayIconTemplate@2.png"
+       transform="scale(0.26458333)"
+       d="M 368.99414 229.22852 A 100.89324 100.89324 0 0 0 268.63672 330.12109 A 100.89324 100.89324 0 0 0 369.5293 431.01367 A 100.89324 100.89324 0 0 0 470.42188 330.12109 A 100.89324 100.89324 0 0 0 369.5293 229.22852 A 100.89324 100.89324 0 0 0 368.99414 229.22852 z M 338.375 279.77734 A 21.045213 21.045213 0 0 1 359.41992 300.82227 A 21.045213 21.045213 0 0 1 338.375 321.86719 A 21.045213 21.045213 0 0 1 317.32812 300.82227 A 21.045213 21.045213 0 0 1 338.375 279.77734 z M 401.92188 279.77734 A 21.045213 21.045213 0 0 1 422.9668 300.82227 A 21.045213 21.045213 0 0 1 401.92188 321.86719 A 21.045213 21.045213 0 0 1 380.87695 300.82227 A 21.045213 21.045213 0 0 1 401.92188 279.77734 z M 370.51172 318.97852 A 37.963918 37.963918 0 0 1 370.56055 318.97852 A 37.963918 37.963918 0 0 1 408.52539 356.94336 A 37.963918 37.963918 0 0 1 370.56055 394.9082 A 37.963918 37.963918 0 0 1 332.59766 356.94336 A 37.963918 37.963918 0 0 1 370.51172 318.97852 z "
+       style="fill:#000000;fill-rule:evenodd;stroke-width:2.6576"
+       id="circle88" />
+    <circle
+       inkscape:export-ydpi="11.93"
+       inkscape:export-xdpi="11.93"
+       inkscape:export-filename="/Users/marc/Developer/personal/touchbar/glowbear/resources/trayIconTemplate@2.png"
+       r="10.04462"
+       cy="65.399208"
+       cx="74.897926"
+       id="path76"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264583" />
+    <circle
+       inkscape:export-ydpi="11.93"
+       inkscape:export-xdpi="11.93"
+       inkscape:export-filename="/Users/marc/Developer/personal/touchbar/glowbear/resources/trayIconTemplate@2.png"
+       style="fill:#000000;fill-rule:evenodd;stroke-width:0.264583"
+       id="circle78"
+       cx="122.93742"
+       cy="65.399208"
+       r="10.04462" />
+  </g>
+</svg>

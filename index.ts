@@ -1,4 +1,4 @@
-import {app, BrowserWindow, globalShortcut, TouchBar, dialog, Menu, MenuItem} from "electron"
+import {app, BrowserWindow, globalShortcut, TouchBar, dialog, Menu, MenuItem, Tray} from "electron"
 import * as register from "./commands"
 import * as fs from "fs"
 import * as process from "process"
@@ -14,12 +14,11 @@ const GLOWBEAR_YAML = "glowbear.yaml"
 
 app.setName("Glowbear")
 
-//app.dock.setIcon(path.join(__dirname, "..", "witchlines-bear-toy-silhouette-300px.png"))
-//app.dock.setIcon(path.join(__dirname, "..", "bears2-300px.png"))
-app.dock.setIcon(path.join(__dirname, "..", "lemmling-Gummy-bear-sort-of-300px.png"))
+//app.dock.setIcon(path.join(__dirname, "../resources", "lemmling-Gummy-bear-sort-of-300px.png"))
+// Prefer to hide the application in the dock
+app.dock.hide()
 
 app.once("ready", () => {
-    ensureConfigDir()
     window = new BrowserWindow({
         //backgroundColor: 'rgb(0,0,0,50)',
         frame: false,
@@ -33,10 +32,13 @@ app.once("ready", () => {
     window.setVisibleOnAllWorkspaces(true)
     window.loadURL('file://' + __dirname + "/index.html")
 
-     // When window is blurred, don't show it in Exposé
+    // When window is blurred, don't show it in Exposé
     window.on("blur", () => {
         window.hide()
     })
+
+    // Create the tray icon we will use for interactions
+    createTray()
 
     // Global shortcut should toggle visibility of Glowy.
     globalShortcut.register(GLOWBEAR_ACCELERATOR, () => {
@@ -49,8 +51,15 @@ app.once("ready", () => {
         }
     })
 
+    // Allow local configuration if configuration not in per-user directory
+    let cmds = []
     let configFile = path.join(GLOWBEAR_CONFIGDIR, GLOWBEAR_YAML)
-    let cmds = register.commands(configFile)
+    if (!fs.existsSync(configFile)) {
+        configFile = path.join(".", GLOWBEAR_YAML)
+    }
+    if (fs.existsSync(configFile)) {
+        cmds = register.commands(configFile)
+    }
     let menu = Menu.buildFromTemplate(mainMenu)
     let goMenu = new Menu()
     let items = [new TouchBar.TouchBarSpacer({size: "small"}), new TouchBar.TouchBarLabel({label: "glowbear"})]
@@ -107,24 +116,23 @@ app.on("will-quit", () => {
     globalShortcut.unregister(GLOWBEAR_ACCELERATOR)
 })
 
-function ensureConfigDir() {
-    console.log(GLOWBEAR_CONFIGDIR)
-    let dstat = fs.stat(GLOWBEAR_CONFIGDIR, (err) => {
-        if (err) {
-            fs.mkdirSync(GLOWBEAR_CONFIGDIR, 0o755)      
-        }
-        let cfg = path.join(GLOWBEAR_CONFIGDIR, GLOWBEAR_YAML)
-        fs.stat(cfg, (err) => {
-            if (err) {
-                fs.writeFile(cfg, "commands: []", (err) => {
-                    console.log(err)
-                    process.exit(1)
-                })
-            }
+function toggleWindow() {
+    window.isVisible() ? window.hide() : window.show()
+}
 
-        })
+function createTray() {
+    let tray = new Tray(path.join(__dirname, "../resources", "trayIconTemplate.png"))
+    let contextMenu = Menu.buildFromTemplate([
+        { label: 'Quit', type: 'normal', role: 'quit' }
+    ])
+    tray.setContextMenu(contextMenu)
+    tray.setToolTip('Right-click or Shift-Cmd-. to activate')
+    // Ensure the touchbar configuration becomes active when right-clicked
+    // ... unfortunately, the standard click event or double-click events seem
+    // to be consumed if a context menu is attached.
+    tray.on('right-click', function(event) {
+        toggleWindow()
     })
-    
 }
 
 let mainMenu: Electron.MenuItemConstructorOptions[] = [
