@@ -15,7 +15,8 @@ so that you can map both a Touch Bar button and a hotkey.
 
 Build it the first time with `npm install && npm run build` or `yarn install && yarn build`
 
-Create/edit your `~/.config/glowbear/glowbear.yaml` file to contain the buttons and commands you want to run.
+Create/edit your `~/.config/glowbear/glowbear.yaml` file, or use a local `glowbear.yaml`, to
+contain the buttons and commands you want to run. Examples are provided in the `examples/` directory.
 
 Run with `npm run start` or `yarn start`.
 

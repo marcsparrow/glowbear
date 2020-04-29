@@ -14,7 +14,7 @@ const GLOWBEAR_YAML = "glowbear.yaml"
 
 app.setName("Glowbear")
 
-//app.dock.setIcon(path.join(__dirname, "../resources", "lemmling-Gummy-bear-sort-of-300px.png"))
+app.dock.setIcon(path.join(__dirname, "../resources", "lemmling-Gummy-bear-sort-of-300px.png"))
 // Prefer to hide the application in the dock
 app.dock.hide()
 
@@ -123,7 +123,7 @@ function toggleWindow() {
 function createTray() {
     let tray = new Tray(path.join(__dirname, "../resources", "trayIconTemplate.png"))
     let contextMenu = Menu.buildFromTemplate([
-        { label: 'Quit', type: 'normal', role: 'quit' }
+        { role: 'quit' }
     ])
     tray.setContextMenu(contextMenu)
     tray.setToolTip('Right-click or Shift-Cmd-. to activate')
