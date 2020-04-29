@@ -13,11 +13,11 @@ so that you can map both a Touch Bar button and a hotkey.
 
 ## Usage
 
-Build it the first time with `npm install && npm build` or `yarn install && yarn build`
+Build it the first time with `npm install && npm run build` or `yarn install && yarn build`
 
 Create/edit your `~/.config/glowbear/glowbear.yaml` file to contain the buttons and commands you want to run.
 
-Run with `npm start` or `yarn start`.
+Run with `npm run start` or `yarn start`.
 
 To raise the app, press `CMD-SHIFT-.`. At that point, the buttons will be visible
 on the button bar, and the accelerator keys will be active.
@@ -51,7 +51,7 @@ Check out the [examples](examples/glowbear.yaml) directory for more examples.
 
 ## LICENSE
 
-This project is licensed under the MIT license. See LICENSE.txt for more.
+This project is licensed under the MIT license. See LICENSE for more.
 
 Images in this package are licensed under CC-0 from https://openclipart.org.
 

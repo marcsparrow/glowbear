@@ -116,7 +116,7 @@ function ensureConfigDir() {
         let cfg = path.join(GLOWBEAR_CONFIGDIR, GLOWBEAR_YAML)
         fs.stat(cfg, (err) => {
             if (err) {
-                fs.writeFile(cfg, "commmands: {}", (err) => {
+                fs.writeFile(cfg, "commands: []", (err) => {
                     console.log(err)
                     process.exit(1)
                 })
